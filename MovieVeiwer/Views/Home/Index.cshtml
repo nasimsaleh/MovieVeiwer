@@ -1,0 +1,141 @@
+﻿@using MovieVeiwer.App_Start;
+
+
+@{
+    ViewBag.Title = "Home Page";
+
+}
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="movie-alert">
+
+            </div>
+        </div>
+    </div>
+    <div class="row" id="movie-container">
+        <div class="input-panel col-md-2">
+            <div class="form">
+                <div class="form-group">
+                    <label class="control-label">Actor</label>
+                    <input class="form-control" id="actor-input" value="Nancy Berg" />
+                    <input class="form-control" id="actor-id" type="hidden" value="129672" />
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Neighborhood Level</label>
+                    <input class="form-control" id="level-input" type="number" value="1" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary " id="execute-query">
+                    @*<i class="glyphicon glyphicon-search"></i>*@ 
+                        <i class="fa"></i>
+                    Execute </button>
+                </div>
+                <hr />
+                <div class="form-group">                  
+
+                    <label class="control-label">Main Actor</label>
+                    <div class="input-group input-group-sm">
+
+                        <select class="form-control input-sm" id="main-actor-shape">
+                            <option selected value="star"> Star </option>
+                            <option value="rectangle"> Rectangle </option>
+                            <option value="ellipse"> ellipse </option>
+                            <option value="triangle"> triangle </option>
+                            <option value="diamond"> diamond </option>
+
+
+                        </select>
+                        <select class="form-control input-sm" id="main-actor-color" style="color:red" onchange="$(this).css('color', $(this).val())">
+                            <option selected value="red" style="color:red"> Red </option>
+                            <option value="blue" style="color:blue"> Blue </option>
+                            <option value="green" style="color:green"> green </option>
+                            <option value="yellow" style="color:yellow"> yellow </option>
+                            <option value="purple" style="color:purple"> purple </option>
+                            <option value="orange" style="color:orange"> Orange </option>
+                            <option value="black" style="color:black"> black </option>
+
+                        </select>
+                       
+
+                    </div>
+                </div>
+                <div class="form-group">
+                   
+
+                    <label class="control-label">Movie</label>
+                    <div class="input-group input-group-sm">
+
+                        <select class="form-control input-sm" id="movie-shape">
+                            <option value="star"> Star </option>
+                            <option value="rectangle"> Rectangle </option>
+                            <option value="ellipse"> ellipse </option>
+                            <option selected value="triangle"> triangle </option>
+                            <option value="diamond"> diamond </option>
+
+
+                        </select>
+                        <select class="form-control input-sm" id="movie-color" style="color:orange" onchange="$(this).css('color', $(this).val())">
+                            <option value="red" style="color:red"> Red </option>
+                            <option value="blue" style="color:blue"> Blue </option>
+                            <option value="green" style="color:green"> green </option>
+                            <option value="yellow" style="color:yellow"> yellow </option>
+                            <option value="purple" style="color:purple"> purple </option>
+                            <option selected value="orange" style="color:orange"> Orange </option>
+                            <option value="black" style="color:black"> black </option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                 
+
+                    <label class="control-label">Actor</label>
+                    <div class="input-group input-group-sm">
+
+                        <select class="form-control input-sm" id="actor-shape">
+                            <option value="star"> Star </option>
+                            <option selected value="rectangle"> Rectangle </option>
+                            <option value="ellipse"> ellipse </option>
+                            <option value="triangle"> triangle </option>
+                            <option value="diamond"> diamond </option>
+
+
+                        </select>
+                        <select class="form-control input-sm" id="actor-color" style="color:blue" onchange="$(this).css('color', $(this).val())">
+                            <option value="red" style="color:red"> Red </option>
+                            <option selected value="blue" style="color:blue"> Blue </option>
+                            <option value="green" style="color:green"> green </option>
+                            <option value="yellow" style="color:yellow"> yellow </option>
+                            <option value="purple" style="color:purple"> purple </option>
+                            <option value="orange" style="color:orange"> Orange </option>
+                            <option value="black" style="color:black"> black </option>
+
+                        </select>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+        <div class="col-md-10" id="cy-container">
+            <div id="cy" class="movie-canvas"></div>
+        </div>
+
+    </div>
+
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://rawgit.com/iVis-at-Bilkent/cytoscape.js-context-menus/master/cytoscape-context-menus.css" rel="stylesheet" />
+<script src="/Scripts/site.js"></script>
+<script src="~/Scripts/cytoscape.min.js"></script>
+<script src="https://cytoscape.org/cytoscape.js-cose-bilkent/cytoscape-cose-bilkent.js"></script>
+<script src="https://rawgit.com/iVis-at-Bilkent/cytoscape.js-context-menus/master/cytoscape-context-menus.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://panel.stockmount.com/assets/global/plugins/jquery-autocomplete/js/jquery.autocomplete.js"></script>
+
+<script>
+
+    initAll();
+</script>
+
